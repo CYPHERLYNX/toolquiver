@@ -20,7 +20,8 @@
     "productName": "ToolQuiver",
     "win": {
       "icon": "assets/icon.ico",
-      "artifactName": "ToolQuiver-Setup-${version}.${ext}",
+      "signAndEditExecutable": false,
+      "artifactName": "ToolQuiver-${version}-win-x64.${ext}",
       "target": [
         {
           "target": "nsis",
