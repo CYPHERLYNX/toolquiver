@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# electron-builder output
+dist/
+*.exe
+*.msi
+*.dmg
+*.AppImage
+*.snap
+*.deb
+*.rpm
+
+# logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# local dev databases (user data lives in the OS userData dir at runtime)
+*.db
+*.db-wal
+*.db-shm
+
+# design-process artifacts
+.design-shots/

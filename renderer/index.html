@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' file: https: data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none';">
+<title>ToolQuiver</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <!-- ============ SIDEBAR ============ -->
+  <aside id="sidebar">
+    <div class="brand"><span class="brand-mark">◈</span> ToolQuiver</div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="add"><span class="ico">＋</span> New find</button>
+      <button class="nav-item" data-view="library"><span class="ico">▦</span> Library <span class="count" id="libCount"></span></button>
+      <button class="nav-item" data-view="favorites"><span class="ico">★</span> Favorites</button>
+    </nav>
+    <div class="nav-label">Categories</div>
+    <nav class="nav cats" id="catNav"></nav>
+    <div class="side-foot">
+      <button class="nav-item" id="exportBtn"><span class="ico">⤓</span> Export</button>
+      <button class="nav-item" id="settingsBtn"><span class="ico">⚙</span> Settings</button>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main id="main">
+    <!-- ADD VIEW -->
+    <section id="view-add" class="view active">
+      <div class="hero">
+        <div class="hero-kicker">YOUR SECOND BRAIN FOR TOOLS</div>
+        <h1>Paste a link.<br><span class="accent">Keep the tool forever.</span></h1>
+        <p class="hero-sub">Drop a GitHub repo, website, Instagram / X post, or APK — ToolQuiver analyzes it, writes the summary, pulls the setup steps, and files it into your library automatically.</p>
+
+        <div class="composer">
+          <textarea id="linkInput" rows="3" aria-label="Paste a link to analyze" placeholder="Paste a GitHub / Instagram / X / website link here…  (or drop an .apk file)"></textarea>
+          <div class="composer-bar">
+            <div class="composer-hints">
+              <button class="chipbtn" id="apkBtn">⤓ Analyze APK file</button>
+              <span class="kbd-hint">Enter ↵ to analyze</span>
+            </div>
+            <button id="analyzeBtn" class="btn-primary">Analyze →</button>
+          </div>
+        </div>
+
+        <div class="examples">
+          <span>Try:</span>
+          <button class="ex" data-ex="https://github.com/facebook/react">facebook/react</button>
+          <button class="ex" data-ex="https://github.com/ollama/ollama">ollama/ollama</button>
+          <button class="ex" data-ex="https://raycast.com">raycast.com</button>
+        </div>
+
+        <div id="resultZone"></div>
+      </div>
+    </section>
+
+    <!-- LIBRARY VIEW -->
+    <section id="view-library" class="view">
+      <div class="lib-head">
+        <h2 id="libTitle">Library</h2>
+        <div class="lib-tools">
+          <input id="searchInput" type="text" aria-label="Search your vault" placeholder="Search your vault…">
+          <select id="sortSel" aria-label="Sort library">
+            <option value="newest">Newest</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+      <div id="catPills" class="pills"></div>
+      <div id="grid" class="grid"></div>
+      <div id="emptyLib" class="empty hidden">
+        <div class="empty-big">◈</div>
+        <p>Your vault is empty.<br>Paste your first link and watch it get filed.</p>
+        <button class="btn-primary" data-goto="add">＋ Add your first find</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============ DETAIL MODAL ============ -->
+<div id="detailModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="Close dialog">✕</button>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<!-- ============ SOCIAL / NEEDS-INPUT MODAL ============ -->
+<div id="socialModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="Close dialog">✕</button>
+    <div id="socialBody"></div>
+  </div>
+</div>
+
+<!-- ============ SETTINGS MODAL ============ -->
+<div id="settingsModal" class="modal hidden">
+  <div class="modal-card narrow">
+    <button class="modal-x" data-close aria-label="Close dialog">✕</button>
+    <h3>Settings</h3>
+    <label class="fld">
+      <span>GitHub personal token <em>(optional — raises API rate limit from 60/hr to 5,000/hr)</em></span>
+      <input id="ghToken" type="password" placeholder="ghp_…">
+    </label>
+    <div class="row">
+      <button class="btn-primary" id="saveToken">Save</button>
+      <button class="btn-ghost" id="clearToken">Clear</button>
+    </div>
+    <h3 class="mt">Library</h3>
+    <div class="row">
+      <button class="btn-ghost" id="expMd">Export Markdown</button>
+      <button class="btn-ghost" id="expJson">Export JSON</button>
+    </div>
+    <p class="muted mt">ToolQuiver ◈ v1.0 — your data never leaves this machine.</p>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "author": "ToolQuiver Contributors",
+  "build": {
+    "appId": "com.toolquiver.app",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "oneClick": false,
+      "shortcutName": "ToolQuiver"
+    },
+    "productName": "ToolQuiver",
+    "win": {
+      "icon": "assets/icon.ico",
+      "artifactName": "ToolQuiver-Setup-${version}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "better-sqlite3": "^12.11.1"
+  },
+  "description": "Paste any link — GitHub repo, website, Instagram/X post, or APK — and ToolQuiver analyzes it into a beautifully categorized personal library of tools.",
+  "devDependencies": {
+    "@electron/rebuild": "^4.2.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "keywords": [
+    "tools",
+    "curator",
+    "github",
+    "productivity",
+    "library",
+    "analyzer",
+    "electron",
+    "windows"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "toolquiver",
+  "productName": "ToolQuiver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CYPHERLYNX/toolquiver.git"
+  },
+  "scripts": {
+    "dist": "electron-builder --win",
+    "dist:dir": "electron-builder --win --dir",
+    "start": "electron .",
+    "prestart": "node scripts/ensure-electron-sqlite.js",
+    "predist": "node scripts/ensure-electron-sqlite.js",
+    "pretest": "node scripts/ensure-node-sqlite.js",
+    "test": "node test/analyzer.test.js",
+    "pretest:e2e": "node scripts/ensure-electron-sqlite.js",
+    "test:e2e": "electron test/e2e.test.js",
+    "rebuild:electron": "node scripts/ensure-electron-sqlite.js",
+    "rebuild:node": "node scripts/ensure-node-sqlite.js"
+  },
+  "version": "1.0.0"
+}
