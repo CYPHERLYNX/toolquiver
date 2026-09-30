@@ -20,6 +20,14 @@ and ToolQuiver analyzes it into a beautifully categorized personal library.
 
 ---
 
+## 🎬 Demo
+
+Watch ToolQuiver in 20 seconds — paste a link, get a library entry:
+
+![ToolQuiver launch video](demo/toolquiver-launch.mp4)
+
+---
+
 ## The problem
 
 You see a cool tool in a reel. A repo linked in a tweet. An APK in a Telegram channel.
