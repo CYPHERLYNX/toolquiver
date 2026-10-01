@@ -6,8 +6,8 @@ ToolQuiver is pre-1.0. Security fixes are applied to the latest release only.
 
 | Version | Supported |
 |---|---|
-| latest release | ✅ |
-| older releases | ❌ |
+| latest release | Yes |
+| older releases | No |
 
 ## Reporting a vulnerability
 

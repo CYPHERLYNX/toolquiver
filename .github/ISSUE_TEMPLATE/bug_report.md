@@ -1,5 +1,5 @@
 ---
-name: 🐞 Bug report
+name: Bug report
 about: Something in ToolQuiver isn't working right
 title: "[bug] "
 labels: bug

@@ -86,7 +86,7 @@ async function runAnalyze(input, opts = {}) {
     bindResultCard(zone, item);
     toast(`Filed under ${item.category} ◈`);
   } catch (err) {
-    zone.innerHTML = `<div class="error-box">⚠ ${esc(err.message || 'Analysis failed.')}</div>`;
+    zone.innerHTML = `<div class="error-box">${esc(err.message || 'Analysis failed.')}</div>`;
   } finally {
     $('#analyzeBtn').disabled = false;
   }
@@ -105,7 +105,7 @@ function resultCardHtml(item, filed) {
         <span class="tag cat">${esc(item.category)}</span>
         ${(item.tags || []).slice(0, 4).map((t) => `<span class="tag">${esc(t)}</span>`).join('')}
       </div>
-      ${setup.quickInstall ? `<div class="setup-mini">⚡ Quick install <code>${esc(setup.quickInstall)}</code></div>` : ''}
+      ${setup.quickInstall ? `<div class="setup-mini">Quick install <code>${esc(setup.quickInstall)}</code></div>` : ''}
       ${steps.length ? `<div class="setup-mini">${steps.map((s) => `• ${esc(s.split('\n')[0])}`).join('<br>')}</div>` : ''}
       <div class="result-actions">
         <button class="btn-primary" data-open="${item.id}">Open in library →</button>
@@ -293,7 +293,7 @@ async function openDetail(id) {
       ${stats.version ? `<div class="stat"><b>${esc(stats.version)}</b><span>version</span></div>` : ''}
     </div></div>` : ''}
     ${setup.quickInstall || steps.length ? `<div class="detail-sec"><h5>Setup — the simple version</h5>
-      ${setup.quickInstall ? `<div class="step"><n>⚡</n><div>Quick install<code>${esc(setup.quickInstall)}</code><button class="copybtn" data-copy="${esc(setup.quickInstall)}">copy</button></div></div>` : ''}
+      ${setup.quickInstall ? `<div class="step"><div>Quick install<code>${esc(setup.quickInstall)}</code><button class="copybtn" data-copy="${esc(setup.quickInstall)}">copy</button></div></div>` : ''}
       ${steps.map((s, i) => {
         const [head, ...rest] = s.split('\n');
         return `<div class="step"><n>${i + 1}</n><div>${esc(head)}${rest.length ? `<code>${esc(rest.join('\n'))}</code>` : ''}</div></div>`;

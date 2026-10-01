@@ -15,7 +15,7 @@ ToolTrove, Hoardly, StashIt, ToolKeep (keephq/keep proximity).
 
 ## Ranked shortlist
 
-### 1. ToolArsenal ⭐ RECOMMENDED
+### 1. ToolArsenal (RECOMMENDED)
 - **GitHub:** 0 repos with this name. Clean.
 - **Web:** no product, company, app, or brand. The phrase "tool arsenal" appears only
   descriptively (a class name in one tiny AI repo, a docs section header in another) —

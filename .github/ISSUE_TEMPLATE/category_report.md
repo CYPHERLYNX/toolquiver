@@ -1,5 +1,5 @@
 ---
-name: 🔍 Miscategorization report
+name: Miscategorization report
 about: ToolQuiver filed something under the wrong category
 title: "[category] "
 labels: categorization

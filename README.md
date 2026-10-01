@@ -14,13 +14,13 @@ and ToolQuiver analyzes it into a beautifully categorized personal library.
 
 ![ToolQuiver hero](screenshots/hero.png)
 
-[Download for Windows](https://github.com/CYPHERLYNX/toolquiver/releases) · [Features](#-features) · [How it works](#-how-it-works) · [Contributing](CONTRIBUTING.md)
+[Download for Windows](https://github.com/CYPHERLYNX/toolquiver/releases) · [Features](#features) · [How it works](#how-it-works) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
 ---
 
-## 🎬 Demo
+## Demo
 
 Watch ToolQuiver in 20 seconds — paste a link, get a library entry:
 
@@ -48,23 +48,23 @@ Paste:  https://github.com/astral-sh/uv
    ↓
 ◈ Uv — Developer Tools
   "An extremely fast Python package and project manager, written in Rust."
-  ⚡ Quick install:  pip install uv
+  Quick install: pip install uv
   Setup: steps extracted from the README
   ★ 90K stars · Rust · saved to your vault
 ```
 
-## ✨ Features
+## Features
 
-- **🔗 Universal link analysis** — GitHub repos, any website, Instagram reels/posts, X posts, and `.apk` files (local or URL)
-- **🧠 Smart auto-categorization** — 16 categories (AI/ML, DevTools, DevOps, Design, Productivity…) with confidence scores and tags. Zero API keys, runs fully offline
-- **📦 Real APK parsing** — reads the binary `AndroidManifest.xml` and `resources.arsc` to extract package name, version, permissions, label, and the raster launcher icon when the APK ships one (vector-only adaptive icons are skipped rather than faked)
-- **⚡ Setup in plain English** — pulls install commands and quick-start steps out of READMEs and simplifies them
-- **🖼️ Auto covers** — repo social cards, Open Graph images, and APK icons saved locally
-- **🔍 Library that thinks** — full-text search, category filters, favorites, personal notes, star counts
-- **📤 Export** — your whole vault as Markdown or JSON, anytime
-- **🔒 Local-first** — your library is a SQLite database on your machine. Analyzing a link fetches its public metadata (repo details, page title, preview image) directly from that site — no analytics, no AI APIs, no account, and your vault never leaves your PC
+- **Universal link analysis** — GitHub repos, any website, Instagram reels/posts, X posts, and `.apk` files (local or URL)
+- **Smart auto-categorization** — 16 categories (AI/ML, DevTools, DevOps, Design, Productivity…) with confidence scores and tags. Zero API keys, runs fully offline
+- **Real APK parsing** — reads the binary `AndroidManifest.xml` and `resources.arsc` to extract package name, version, permissions, label, and the raster launcher icon when the APK ships one (vector-only adaptive icons are skipped rather than faked)
+- **Setup in plain English** — pulls install commands and quick-start steps out of READMEs and simplifies them
+- **Auto covers** — repo social cards, Open Graph images, and APK icons saved locally
+- **Library that thinks** — full-text search, category filters, favorites, personal notes, star counts
+- **Export** — your whole vault as Markdown or JSON, anytime
+- **Local-first** — your library is a SQLite database on your machine. Analyzing a link fetches its public metadata (repo details, page title, preview image) directly from that site — no analytics, no AI APIs, no account, and your vault never leaves your PC
 
-## 🖥️ How it works
+## How it works
 
 | You paste… | ToolQuiver… |
 |---|---|
@@ -78,7 +78,7 @@ Categorization is a weighted heuristic engine (`src/analyzer/categorize.js`) sco
 name ×3, topics ×2.5, description ×2, and README ×0.5 — with word-boundary matching so
 "AI" doesn't match "said". No LLM calls, no keys, instant.
 
-## 🚀 Quick start
+## Quick start
 
 **Prerequisites:** [Node.js](https://nodejs.org/) 20+
 
@@ -100,7 +100,7 @@ npm run dist
 > personal access token in *Settings* to raise it to 5,000/hr. Everything else
 > works without any token.
 
-## 🛠️ Tech stack
+## Tech stack
 
 - **Electron 33** — Windows desktop shell
 - **better-sqlite3** — local vault database
@@ -128,7 +128,7 @@ toolquiver/
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full breakdown.
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Browser extension — "Send to ToolQuiver" from any page
 - [ ] YouTube / TikTok link analysis
@@ -137,21 +137,21 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full breakdown.
 - [ ] Optional local-LLM summaries (Ollama) for deeper analysis
 - [ ] macOS / Linux builds
 
-Vote with 👍 on [issues](https://github.com/CYPHERLYNX/toolquiver/issues) — or just open a PR.
+Vote on [issues](https://github.com/CYPHERLYNX/toolquiver/issues) — or just open a PR.
 
-## 🤝 Contributing
+## Contributing
 
 PRs welcome! `src/analyzer/` is pluggable — new source types are a great first
 contribution. Read [CONTRIBUTING.md](CONTRIBUTING.md), run `npm test`, keep it
 key-free and local-first.
 
-## ⭐ Why star this?
+## Why star this?
 
 If you've ever lost a tool to a forgotten bookmark, ToolQuiver is for you.
 Star it, share your vault screenshots in
 [Discussions](https://github.com/CYPHERLYNX/toolquiver/discussions) — and never
 lose a discovery again.
 
-## 📄 License
+## License
 
 MIT — see [LICENSE](LICENSE). Built for the open-source community. ◈
